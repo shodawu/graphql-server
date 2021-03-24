@@ -3,14 +3,13 @@
 package model
 
 import (
-	"time"
+	"go-users/entities"
+	"gorm.io/gorm"
 )
 
 type User struct {
-	ID        string      `json:"id"`
-	Name      string      `json:"name"`
-	Email     string      `json:"email"`
-	CreatedAt time.Time   `json:"createdAt"`
-	UpdatedAt time.Time   `json:"updatedAt"`
-	Status    interface{} `json:"status"`
+	gorm.Model
+	Name   string
+	Email  string
+	Status entities.UserStatus
 }
